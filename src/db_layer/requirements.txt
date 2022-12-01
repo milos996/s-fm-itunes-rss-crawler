@@ -1,0 +1,4 @@
+sqlalchemy==1.4.23
+SQLAlchemy-Utils==0.37.8
+alembic==1.6.5
+psycopg2==2.9.5

@@ -75,7 +75,7 @@ def run_task(podcast):
         overrides={
             "containerOverrides": [
                 {
-                    "name": os.environ.get("ECS_CONTAINER"),
+                    "name": "PodcastScraperTask",
                     "environment": [
                         {"name": "PODCAST_TO_SCRAPE", "value": format_payload(podcast)},
                     ],
@@ -111,7 +111,7 @@ def lambda_handler(event, context):
 
     current_number_of_running_tasks = get_current_number_of_running_tasks()
 
-    # Idea is to always run defined set of tasks and not to overwhelm system
+    # Idea is to always to run defined set of tasks and not to overwhelm system
     podcasts = get_podcasts_to_scrape(
         number_of_parallel_tasks_for_scraping - current_number_of_running_tasks
     )

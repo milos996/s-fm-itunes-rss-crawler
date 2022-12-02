@@ -79,13 +79,6 @@ def lambda_handler(event, context):
     clusters_of_links = get_clusters_from_links(links)
 
     for cluster in clusters_of_links:
-        event = {"categories_urls_to_parse": cluster}
+        cluster_data = {"categories_urls_to_parse": cluster}
 
-        send_event_for_parsing_popular_podcasts(event)
-
-
-if __name__ == "__main__":
-    os.environ["POPULAR_PODCASTS_QUEUE_URL"] = "url"
-    os.environ["NUMBER_OF_ITEMS_PER_CLUSTERS"] = "4"
-
-    lambda_handler({}, {})
+        send_event_for_parsing_popular_podcasts(cluster_data)

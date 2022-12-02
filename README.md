@@ -1,7 +1,9 @@
 
-# Welcome to your CDK Python project!
+# Solution design
 
-This is a blank project for CDK development with Python.
+![Solution design](Flowcharts.png?raw=true "Design documentation")
+
+# Setup
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
